@@ -12,7 +12,7 @@ import javax.annotation.sql.DataSourceDefinition;
 import javax.annotation.sql.DataSourceDefinitions;
 import javax.security.auth.login.Configuration;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
+@SpringBootApplication
 public class HzyApplication {
 
 	public static void main(String[] args) {
