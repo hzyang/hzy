@@ -2,17 +2,15 @@ package com.admin.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by zhenyang.he on 2017/9/21.
+ * Created by zhenyang.he on 2017/10/25.
  */
 @Controller
-@RequestMapping("/hzy")
-public class TestController {
+public class LoginController {
 
     @RequestMapping("/login")
-    String test(){
-        return "index";
+    public String login(){
+        return "login";
     }
 }

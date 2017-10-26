@@ -28,7 +28,7 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!-- dao层接口文件 -->
-        <javaClientGenerator targetPackage="com.admin.dao"
+        <javaClientGenerator targetPackage="com.admin.mapper"
                              targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>

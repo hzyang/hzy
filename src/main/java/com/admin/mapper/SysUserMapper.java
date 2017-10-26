@@ -1,4 +1,4 @@
-package com.admin.dao;
+package com.admin.mapper;
 
 import com.admin.model.SysUser;
 
