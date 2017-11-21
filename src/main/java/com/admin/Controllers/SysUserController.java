@@ -4,16 +4,14 @@ import com.admin.model.SysUser;
 import com.admin.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Created by zhenyang.he on 2017/10/25.
  */
+//@RestController 用于输出字符串
 @Controller
 @RequestMapping("/hzy")
 public class SysUserController {
@@ -22,9 +20,10 @@ public class SysUserController {
     private ISysUserService sysUserService;
 
     @RequestMapping("/select")
-    public String getselectUser(){
+    public String getselectUser(Model model){
          SysUser sysUser = sysUserService.selectId(1);
-         return sysUser.getUserName().concat("  -  ").concat(sysUser.getStatus());
+         model.addAttribute("user",sysUser);
+         return "User";
     }
 
 
