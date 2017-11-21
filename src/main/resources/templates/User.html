@@ -5,6 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-这是一个<B>${user.userName!}</B>自述： 我的密码是 ${user.password!}.
+这是一个<B>${user.userName!}</B>自述 ： </br> 我的密码是 ${user.password!}.</br>
+状态：${user.status!}</br>
+类型：${user.type!}</br>
+启用标志${user.userFlag!}</br>
+时间从：${user.startDate?string("yyyy/MM/dd")!}</br>
+时间至：${user.endDate?string("yyyy/MM/dd")!}</br>
+
 </body>
 </html>

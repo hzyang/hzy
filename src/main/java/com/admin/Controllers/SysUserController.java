@@ -1,11 +1,12 @@
 package com.admin.Controllers;
 
+import com.admin.Constant.UserConstants;
 import com.admin.model.SysUser;
 import com.admin.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -13,16 +14,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 //@RestController 用于输出字符串
 @Controller
-@RequestMapping("/hzy")
+@RequestMapping(value = "/hzy")
 public class SysUserController {
 
     @Autowired
     private ISysUserService sysUserService;
 
-    @RequestMapping("/select")
-    public String getselectUser(Model model){
-         SysUser sysUser = sysUserService.selectId(1);
-         model.addAttribute("user",sysUser);
+    @RequestMapping(value = "/select",method = RequestMethod.POST)
+    public String getselectUser(Model model,String userName,String password){
+            if(UserConstants.ADMIN.equals(userName)){
+                SysUser sysUser = sysUserService.selectId(1);
+                model.addAttribute("user",sysUser);
+            }
          return "User";
     }
 
